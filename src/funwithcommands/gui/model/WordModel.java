@@ -52,4 +52,9 @@ public class WordModel
         words.remove(word);
     }
 
+    public void clearList()
+    {
+        words.clear();
+    }
+    
 }
