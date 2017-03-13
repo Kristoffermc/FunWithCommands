@@ -70,22 +70,23 @@ public class MainViewController implements Initializable
             @Override
             public void execute()
             {
-                removedWords.clear();
-                for (String word : listWords.getItems())
+                removedWords.clear(); // Clears the removedWords list
+                
+                for (String word : listWords.getItems()) // Every word in the listWords is added to the removedWords list.
                 {
                     removedWords.add(word);
                 }
-                model.clearList();
+                model.clearList(); // Clears the list
             }
 
             @Override
             public void undo()
             {
-                for (String word : removedWords)
+                for (String word : removedWords) // Every word in the removedWords is added to the listWords list.
                 {
                     model.addWord(word);
                 }
-                removedWords.clear();
+                removedWords.clear(); // Clears the removedWords list
             }
         };
 
